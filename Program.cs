@@ -15,23 +15,20 @@ namespace FrogJmp
 
             int calcularPasos(int X, int Y, int D) {
 
-                int cantPasos = 0;
-                int suma = 0+X;
-
-                while (suma<Y)
+                double cantPasos = (Double)(Y - X) / D;
+                double prueba = cantPasos % 1;
+                if (cantPasos%1!=0)
                 {
-                    suma += D;
-
-                    cantPasos++;
-
+                    cantPasos = Math.Floor(cantPasos);
+                    cantPasos += 1;
                 }
-                
-                return cantPasos;
+
+                return (int) cantPasos;
 
             }
 
-            Console.WriteLine(calcularPasos(10,85,30));
-            Console.ReadKey();
+            Console.WriteLine(calcularPasos(10, 85, 30));
+            Console.ReadLine();
         }
 
        
